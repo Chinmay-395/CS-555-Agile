@@ -84,3 +84,6 @@ ID, NAME, Gender, Birthday, Age, Alive, Death, Child, Spouse
 Families
 ID, Married, Divorced, Husband ID, Husband Name, Wife ID, Wife Name, Children
 '''
+def main(file_name):
+    list_indi, list_fam = parse(file_name)
+    list_indi.sort()
