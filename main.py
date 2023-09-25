@@ -84,6 +84,33 @@ ID, NAME, Gender, Birthday, Age, Alive, Death, Child, Spouse
 Families
 ID, Married, Divorced, Husband ID, Husband Name, Wife ID, Wife Name, Children
 '''
+
+"""This function creates a new list for an individual"""
+def indi_list():
+    op_list = [0 for i in range(7)]
+    op_list[5] = []
+    return op_list
+
+"""This function creates a new list for a family"""
+def fam_list():
+    op_list = [0 for i in range(6)]
+    op_list[5] = []
+    return op_list
+
+"""This function takes input '/Last_Name/' and returns 'Last_Name' as output (removes the slashes in .ged file)"""
+def getLastName(str):
+    temp=''
+    for i in str:
+        if(i != '/'):
+            temp += i
+    return temp
+
+"""This function prints the contents of the input list"""
+def print_list(ip_list):
+    print("\n")
+    for i in ip_list:
+        print(i)
+
 def main(file_name):
     list_indi, list_fam = parse(file_name)
     list_indi.sort()
