@@ -89,3 +89,10 @@ def individualTable(path:str) -> None:
         raise FileNotFoundError("File not found : ",path )
     else:
         print("path found")
+        content_list = []
+        file_content = fp.readlines()
+        for line in file_content:
+            line = list(line.rstrip("\n").split(" ", 2))
+            content_list.append(line)
+        counter =0
+        
