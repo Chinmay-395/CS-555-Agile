@@ -72,3 +72,20 @@ with open("Chinmay_Dali_GEDCOM.ged", "r") as file:
 # Open the file in "w" mode, which will create or overwrite the file
 with open("output.txt", "w") as file:
     file.write(file_content)
+
+# list of headers in individual tables
+'''
+Individual Table:
+ID, NAME, Gender, Birthday, Age, Alive, Death, Child, Spouse
+
+Families
+ID, Married, Divorced, Husband ID, Husband Name, Wife ID, Wife Name, Children
+'''
+
+def individualTable(path:str) -> None:
+    try:
+        fp = open(path, 'r')
+    except FileNotFoundError:
+        raise FileNotFoundError("File not found : ",path )
+    else:
+        print("path found")
