@@ -48,7 +48,7 @@ def dematrializing(input_string_list:list[str]) -> tuple[str,str,str,str]:
 
 
 # Read the GEDCOM file line by line Chinmay_Dali_GEDCOM
-with open("Chinmay_Dali_GEDCOM.ged", "r") as file:
+with open("Sachin_Devangan_CS_555_WS4.ged", "r") as file:
     file_content = ""
     for line in file:
         # read each line
@@ -174,3 +174,9 @@ def parse(file_name):
 def main(file_name):
     list_indi, list_fam = parse(file_name)
     list_indi.sort()
+    list_fam.sort()
+    print("THE TOTAL NUMBER OF PEOPLE IN THE LIST", len(list_indi))
+    print_list(list_indi)
+    print_list(list_fam)
+
+main('Sachin_Devangan_CS_555_WS4.ged')
