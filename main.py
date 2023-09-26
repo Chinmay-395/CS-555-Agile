@@ -94,8 +94,8 @@ def indi_list():
 
 """This function creates a new list for a family"""
 def fam_list():
-    op_list = [0 for i in range(6)]
-    op_list[5] = []
+    op_list = [0 for i in range(8)]
+    op_list[7] = []
     return op_list
 
 """This function takes input '/Last_Name/' and returns 'Last_Name' as output (removes the slashes in .ged file)"""
@@ -122,7 +122,7 @@ def print_Indi(ip_list):
 
 def print_Fam(ip_list):
     table = PrettyTable()
-    table.field_names = ["ID", "NAME", "GENDER","BIRTHDAY","DEATH","CHILD","SPOUSE","ALIVE", "AGE"]
+    table.field_names = ["ID", "MARRIED", "DIVORCE","HUSBAND ID","HUSBAND NAME","WIFE ID","WIFE NAME","CHILDREN"]
     for i in ip_list:
         table.add_row(i)
     # table.align = "1"
@@ -158,12 +158,13 @@ def parse(file_name):
     f = open(file_name,'r')
     indi_on = 0
     fam_on = 0
+    giant_dict = {}
     list_indi = []
     list_fam = []
     indi = indi_list()
-    print("THE SIZE OF INDI ", len(indi))
+    
     fam = fam_list()
-    print("THE SIZE OF INDI ", len(fam))
+    
     for line in f:
         str = line.split()
         if(str != []):
@@ -188,6 +189,7 @@ def parse(file_name):
             if(str[0] == '1'):
                 if(str[1] == 'NAME'):
                     indi[1] = str[2] + " " + getLastName(str[3])
+                    giant_dict[indi[0]] = indi[1]
                 if(str[1] == 'SEX'):
                     indi[2] = str[2]
                 if(str[1] in ['BIRT', 'DEAT', 'MARR', 'DIV']):
@@ -197,11 +199,13 @@ def parse(file_name):
                 if(str[1] == 'FAMC'):
                     indi[6] = str[2]
                 if(str[1] == 'HUSB'):
-                    fam[1] = str[2]
+                    fam[3] = str[2]
+                    fam[4] = giant_dict[str[2]]
                 if(str[1] == 'WIFE'):
-                    fam[2] = str[2]
+                    fam[5] = str[2]
+                    fam[6] = giant_dict[str[2]]
                 if(str[1] == 'CHIL'):
-                    fam[5].append(str[2])
+                    fam[7].append(str[2])
             if(str[0] == '2'):
                 if(str[1] == 'DATE'):
                     date = str[4] + " " + str[3] + " " + str[2]
@@ -209,16 +213,26 @@ def parse(file_name):
                         indi[3] = date
                         indi[7] = "Y"
                         date_format_as = str[2] + " " + str[3] + " " + str[4]
-                        print("date ",date_format_as)
+                        # print("date ",date_format_as)
                         indi[8] = calculate_age(date_format_as)
-                        indi[4] = "NA" #death not yet
+                        indi[4] = "NA" #death will be NA until it is explicitly mentioned
                     if(date_id == 'DEAT'):
                         indi[4] = date
                         indi[7] = "N"
+                    # checking for married status    
                     if(date_id == 'MARR'):
-                        fam[3] = date
+                        print("THE MARR DATE ",date)
+                        fam[1] = date
+                        fam[2] = "NA" # divorce will be NA until it is explicitly mentioned
+                    # elif(date_id != 'MARR'):
+                    #     fam[1] = "NA"
+                    #     fam[5] = "NA"
+                    #     fam[6] = "NA"
+                    # checking if dead
                     if(date_id == 'DIV'):
-                        fam[4] = date
+                        fam[2] = date
+                    
+            
     return list_indi, list_fam
 
 def main(file_name):
@@ -227,6 +241,6 @@ def main(file_name):
     # list_fam.sort()
     print("THE TOTAL NUMBER OF PEOPLE IN THE LIST", len(list_indi))
     print_Indi(list_indi)
-    print_list(list_fam)
+    print_Fam(list_fam)
 
 main('Sachin_Devangan_CS_555_WS4.ged')
