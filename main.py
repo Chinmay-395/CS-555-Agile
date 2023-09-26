@@ -211,14 +211,14 @@ def parse(file_name):
                     date = str[4] + " " + str[3] + " " + str[2]
                     if(date_id == 'BIRT'):
                         indi[3] = date
-                        indi[7] = "Y"
+                        indi[7] = "TRUE"
                         date_format_as = str[2] + " " + str[3] + " " + str[4]
                         # print("date ",date_format_as)
                         indi[8] = calculate_age(date_format_as)
                         indi[4] = "NA" #death will be NA until it is explicitly mentioned
                     if(date_id == 'DEAT'):
                         indi[4] = date
-                        indi[7] = "N"
+                        indi[7] = "FALSE"
                     # checking for married status    
                     if(date_id == 'MARR'):
                         print("THE MARR DATE ",date)
