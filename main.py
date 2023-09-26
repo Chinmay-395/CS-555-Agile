@@ -119,6 +119,10 @@ def print_Indi(ip_list):
         table.add_row(i)
     # table.align(1)
     print(table)
+    with open('individual_Table.txt', 'w') as w:
+        w.write(table.get_string())
+        # w.write()
+        w.close()
 
 def print_Fam(ip_list):
     table = PrettyTable()
@@ -127,6 +131,9 @@ def print_Fam(ip_list):
         table.add_row(i)
     # table.align = "1"
     print(table)
+    with open('family_Table.txt', 'w') as w:
+        w.write(table.get_string())
+        w.close()
 
 
 def calculate_age(date_of_birth):
