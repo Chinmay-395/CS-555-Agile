@@ -173,8 +173,8 @@ def parse(file_name):
 
 def main(file_name):
     list_indi, list_fam = parse(file_name)
-    list_indi.sort()
-    list_fam.sort()
+    # list_indi.sort()
+    # list_fam.sort()
     print("THE TOTAL NUMBER OF PEOPLE IN THE LIST", len(list_indi))
     print_list(list_indi)
     print_list(list_fam)
