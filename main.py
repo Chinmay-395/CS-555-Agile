@@ -112,6 +112,23 @@ def print_list(ip_list):
     for i in ip_list:
         print(i)
 
+def print_Indi(ip_list):
+    table = PrettyTable()
+    table.field_names = ["ID", "NAME", "GENDER","BIRTHDAY","DEATH","CHILD","SPOUSE","ALIVE", "AGE"]
+    for i in ip_list:
+        table.add_row(i)
+    # table.align(1)
+    print(table)
+
+def print_Fam(ip_list):
+    table = PrettyTable()
+    table.field_names = ["ID", "NAME", "GENDER","BIRTHDAY","DEATH","CHILD","SPOUSE","ALIVE", "AGE"]
+    for i in ip_list:
+        table.add_row(i)
+    # table.align = "1"
+    print(table)
+
+
 def calculate_age(date_of_birth):
     # Define a dictionary to map month names to their numeric values
     month_mapping = {
@@ -194,6 +211,7 @@ def parse(file_name):
                         date_format_as = str[2] + " " + str[3] + " " + str[4]
                         print("date ",date_format_as)
                         indi[8] = calculate_age(date_format_as)
+                        indi[4] = "NA" #death not yet
                     if(date_id == 'DEAT'):
                         indi[4] = date
                         indi[7] = "N"
@@ -208,7 +226,7 @@ def main(file_name):
     # list_indi.sort()
     # list_fam.sort()
     print("THE TOTAL NUMBER OF PEOPLE IN THE LIST", len(list_indi))
-    print_list(list_indi)
+    print_Indi(list_indi)
     print_list(list_fam)
 
 main('Sachin_Devangan_CS_555_WS4.ged')
