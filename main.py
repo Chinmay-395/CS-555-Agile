@@ -113,19 +113,28 @@ def print_list(ip_list):
         print(i)
 
 def calculate_age(date_of_birth):
-    try:
-        # Parse the input date_of_birth string into a datetime object
-        birthdate = datetime.strptime(date_of_birth, '%Y-%m-%d')  # Adjust the format as needed
-        
-        # Calculate the current date
-        current_date = datetime.now()
-        
-        # Calculate the age by subtracting birthdate from the current date
-        age = current_date.year - birthdate.year - ((current_date.month, current_date.day) < (birthdate.month, birthdate.day))
-        
-        return age
-    except ValueError:
-        return "Invalid date format"
+    # Define a dictionary to map month names to their numeric values
+    month_mapping = {
+        'JAN': 1, 'FEB': 2, 'MAR': 3, 'APR': 4, 'MAY': 5, 'JUN': 6,
+        'JUL': 7, 'AUG': 8, 'SEP': 9, 'OCT': 10, 'NOV': 11, 'DEC': 12
+    }
+
+    # Split the date_of_birth string into day, month, and year
+    parts = date_of_birth.split()
+    day = int(parts[0])
+    month = month_mapping[parts[1].upper()]
+    year = int(parts[2])
+
+    # Get the current date
+    current_date = datetime.now()
+
+    # Create a datetime object for the date of birth
+    dob = datetime(year, month, day)
+
+    # Calculate the age
+    age = current_date.year - dob.year - ((current_date.month, current_date.day) < (dob.month, dob.day))
+
+    return age
 
 """This function parses the GEDCOM File and returns 2 lists: one for individuals and another for families"""
 def parse(file_name):
@@ -182,7 +191,9 @@ def parse(file_name):
                     if(date_id == 'BIRT'):
                         indi[3] = date
                         indi[7] = "Y"
-                        indi[8] = calculate_age(date)
+                        date_format_as = str[2] + " " + str[3] + " " + str[4]
+                        print("date ",date_format_as)
+                        indi[8] = calculate_age(date_format_as)
                     if(date_id == 'DEAT'):
                         indi[4] = date
                         indi[7] = "N"
