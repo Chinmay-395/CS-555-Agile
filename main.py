@@ -1,4 +1,5 @@
 from prettytable import PrettyTable
+from datetime import datetime
 import time
 
 def checkIfValidTag(tagVal:str) -> str:
@@ -87,7 +88,7 @@ ID, Married, Divorced, Husband ID, Husband Name, Wife ID, Wife Name, Children
 
 """This function creates a new list for an individual"""
 def indi_list():
-    op_list = [0 for i in range(7)]
+    op_list = [0 for i in range(9)]
     op_list[5] = []
     return op_list
 
@@ -111,6 +112,21 @@ def print_list(ip_list):
     for i in ip_list:
         print(i)
 
+def calculate_age(date_of_birth):
+    try:
+        # Parse the input date_of_birth string into a datetime object
+        birthdate = datetime.strptime(date_of_birth, '%Y-%m-%d')  # Adjust the format as needed
+        
+        # Calculate the current date
+        current_date = datetime.now()
+        
+        # Calculate the age by subtracting birthdate from the current date
+        age = current_date.year - birthdate.year - ((current_date.month, current_date.day) < (birthdate.month, birthdate.day))
+        
+        return age
+    except ValueError:
+        return "Invalid date format"
+
 """This function parses the GEDCOM File and returns 2 lists: one for individuals and another for families"""
 def parse(file_name):
     f = open(file_name,'r')
@@ -119,7 +135,9 @@ def parse(file_name):
     list_indi = []
     list_fam = []
     indi = indi_list()
+    print("THE SIZE OF INDI ", len(indi))
     fam = fam_list()
+    print("THE SIZE OF INDI ", len(fam))
     for line in f:
         str = line.split()
         if(str != []):
@@ -163,8 +181,11 @@ def parse(file_name):
                     date = str[4] + " " + str[3] + " " + str[2]
                     if(date_id == 'BIRT'):
                         indi[3] = date
+                        indi[7] = "Y"
+                        indi[8] = calculate_age(date)
                     if(date_id == 'DEAT'):
                         indi[4] = date
+                        indi[7] = "N"
                     if(date_id == 'MARR'):
                         fam[3] = date
                     if(date_id == 'DIV'):
