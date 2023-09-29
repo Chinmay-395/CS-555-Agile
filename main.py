@@ -1,6 +1,6 @@
 from pandas import read_csv
 from Initialparser import print_Indi, print_Fam, parse
-from US33_list_orphans.US33_list_orphans import listOrphans
+from US33.US33_list_orphans import listOrphans
 
 
 def main(file_name):
