@@ -1,3 +1,6 @@
+from prettytable import PrettyTable
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 # list of headers in individual tables
 '''
 Individual Table:
