@@ -228,7 +228,6 @@ def parse(file_name):
                         indi[7] = "FALSE"
                     # checking for married status    
                     if(date_id == 'MARR'):
-                        print("THE MARR DATE ",date)
                         fam[1] = date
                         fam[2] = "NA" # divorce will be NA until it is explicitly mentioned
                     # elif(date_id != 'MARR'):
@@ -238,8 +237,6 @@ def parse(file_name):
                     # checking if dead
                     if(date_id == 'DIV'):
                         fam[2] = date
-                    
-            
     return list_indi, list_fam
 
 def main(file_name):
