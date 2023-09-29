@@ -7,3 +7,6 @@ base.py
 family.ged
 individual_tb.csv
 family_tb.csv
+__pycache__/
+sa2.ged
+sa3.ged

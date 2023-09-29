@@ -4,9 +4,9 @@
 
 - main.py : the top most file, where the code should start.
 - printOutput.py: This will print output of the code on the console as well as in text file.
-- filters.py: Data filtering based on different aspects should be merged here.
 - Initialparser.py: Tagging of each of the input based on "valid" tag. ("valid" tags are the once which will be used for the ouputing all the relevant data in
   the console or in the text file).
+- `./US<number>/US<number>_<name of the file seperated by underscores>.py`: Individual user stories should be worked in different folders as the name suggest, as it's respective unit testing should be done in that one folder itself.
 
 ## Installation and Execution:
 
