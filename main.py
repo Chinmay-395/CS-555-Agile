@@ -117,23 +117,24 @@ def print_Indi(ip_list):
     table.field_names = ["ID", "NAME", "GENDER","BIRTHDAY","DEATH","CHILD","SPOUSE","ALIVE", "AGE"]
     for i in ip_list:
         table.add_row(i)
-    # table.align(1)
-    print(table)
-    with open('individual_Table.txt', 'w') as w:
-        w.write(table.get_string())
-        # w.write()
-        w.close()
+    
+    tbl_as_csv = table.get_csv_string().replace('\r','')
+    # saving it as individual table in a excel file
+    text_file = open("individual_tb.csv", "w")
+    n = text_file.write(tbl_as_csv)
+    text_file.close()
 
 def print_Fam(ip_list):
     table = PrettyTable()
     table.field_names = ["ID", "MARRIED", "DIVORCE","HUSBAND ID","HUSBAND NAME","WIFE ID","WIFE NAME","CHILDREN"]
     for i in ip_list:
         table.add_row(i)
-    # table.align = "1"
-    print(table)
-    with open('family_Table.txt', 'w') as w:
-        w.write(table.get_string())
-        w.close()
+    
+    tbl_as_csv = table.get_csv_string().replace('\r','')
+    # saving it as family table in a excel file
+    text_file = open("family_tb.csv", "w")
+    n = text_file.write(tbl_as_csv)
+    text_file.close()
 
 
 def calculate_age(date_of_birth):
