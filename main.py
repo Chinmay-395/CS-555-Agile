@@ -247,5 +247,7 @@ def main(file_name):
     print("THE TOTAL NUMBER OF PEOPLE IN THE LIST", len(list_indi))
     print_Indi(list_indi)
     print_Fam(list_fam)
+    df_indi = pd.read_csv('individual_tb.csv')
+    df_fam = pd.read_csv('family_tb.csv')
 
 main('Sachin_Devangan_CS_555_WS4.ged')
