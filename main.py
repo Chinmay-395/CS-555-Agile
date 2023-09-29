@@ -1,6 +1,7 @@
 from pandas import read_csv
 from Initialparser import print_Indi, print_Fam, parse
 from US33.US33_list_orphans import listOrphans
+from US31.US31_list_living_single import listLivingSingles
 
 
 def main(file_name):
@@ -12,4 +13,7 @@ def main(file_name):
     df_fam = read_csv('family_tb.csv')
     listOrphans(df_indi,df_fam)
 
-main('sa3.ged')
+    # df_singles = read_csv('singles.csv')
+    listLivingSingles(df_indi)
+
+main('Sachin_Devangan_CS_555_WS4.ged')
