@@ -1,5 +1,5 @@
 # Read the GEDCOM file line by line Chinmay_Dali_GEDCOM
-with open("Chinmay_Dali_GEDCOM.ged", "r") as file:
+with open("Sachin_Devangan_CS_555_WS4.ged", "r") as file:
     file_content = ""
     for line in file:
         # read each line
