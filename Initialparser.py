@@ -8,9 +8,6 @@ ID, NAME, Gender, Birthday, Age, Alive, Death, Child, Spouse
 Families
 ID, Married, Divorced, Husband ID, Husband Name, Wife ID, Wife Name, Children
 '''
-def name_without_special_char(str_val:str):
-  output_string = str_val.replace('/', '')
-  return output_string
 
 """This function creates a new list for an individual"""
 def dataFrameOfIndividuals(file_name):
@@ -38,7 +35,7 @@ def dataFrameOfIndividuals(file_name):
           person['ID'] = line.split()[1].replace('@','')
         #   person['index'] = i
         if 'NAME' in line.split():
-          person['NAME'] = name_without_special_char(name_without_special_char(line.split('NAME')[1].replace('\n','')))
+          person['NAME'] = line.split('NAME')[1].replace('\n','')
           indi_id_name_hmap[person['ID']] = person['NAME']
         if 'SEX' in line.split() and level == '1':
           person['gender'] = line.split()[2]
@@ -62,7 +59,7 @@ def dataFrameOfIndividuals(file_name):
           person['ID'] = line.split()[1].replace('@','')
         #   person['index'] = i
         if 'NAME' in line.split():
-          person['NAME'] = name_without_special_char(line.split('NAME')[1].replace('\n',''))
+          person['NAME'] = line.split('NAME')[1].replace('\n','')
           indi_id_name_hmap[person['ID']] = person['NAME']
         if 'SEX' in line.split() and level == '1':
           person['gender'] = line.split()[2]
@@ -127,13 +124,13 @@ def dataFrameOfFamilies(file_name, indi_id_name_hmap):
           try:
             family['HUSBAND NAME'] = indi_id_name_hmap[family['HUSBAND ID']]
           except KeyError:
-            family['HUSBAND NAME'] = 'nan'
+            family['HUSBAND NAME'] = 'NA'
         if 'WIFE' in line.split():
           family['WIFE ID'] = line.split()[2].replace('@','')
           try:
             family['WIFE NAME'] = indi_id_name_hmap[family['WIFE ID']]
           except KeyError:
-            family['WIFE NAME'] = 'nan'
+            family['WIFE NAME'] = 'NA'
         if 'CHIL' in line.split():
           if 'CHILDREN' in family: 
             family['CHILDREN'].append(line.split()[2].replace('@',''))
@@ -158,13 +155,13 @@ def dataFrameOfFamilies(file_name, indi_id_name_hmap):
           try:
             family['HUSBAND NAME'] = indi_id_name_hmap[family['HUSBAND ID']]
           except KeyError:
-            family['HUSBAND NAME'] = 'nan'
+            family['HUSBAND NAME'] = 'NA'
         if 'WIFE' in line.split():
           family['WIFE ID'] = line.split()[2].replace('@','')
           try:
             family['WIFE NAME'] = indi_id_name_hmap[family['WIFE ID']]
           except KeyError:
-            family['WIFE NAME'] = 'nan'
+            family['WIFE NAME'] = 'NA'
         if 'CHIL' in line.split():
           if 'CHILDREN' in family: 
             family['CHILDREN'].append(line.split()[2].replace('@',''))
