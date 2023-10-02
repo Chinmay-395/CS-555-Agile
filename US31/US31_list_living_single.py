@@ -3,7 +3,8 @@ from datetime import datetime
 def calculate_age(birthday):
     try:
         # Attempt to parse the birthdate from GEDCOM format ('1990 JAN 1') to datetime object
-        birthdate = datetime.strptime(birthday, '%Y %b %d')
+        print("THE TYPE ", type(birthday))
+        birthdate = datetime.strptime(birthday, '%d %b %Y')
     except ValueError:
         # Handle other date formats or return an error code as needed
         return None
@@ -17,8 +18,10 @@ def calculate_age(birthday):
 def listLivingSinglesOver30(individuals):
     living_singles_over_30 = []
     for index, person in individuals.iterrows():
-        print(f"Checking person: {person['NAME']}, Age: {calculate_age(person['BIRTHDAY'])}, Married: {len(person['SPOUSE']) > 0}")
-        if calculate_age(person["BIRTHDAY"]) > 30 and person["ALIVE"] and len(person["SPOUSE"]) == 0:
+        # print("each person ",person)
+        print("THE AGE OF PERSON ",person["AGE"], " ",person["NAME"])
+        # cannot testify if the "nan" with length of the list
+        if person["AGE"] > 30 and person["ALIVE"] and type(person["SPOUSE"]) is not list:
             living_singles_over_30.append((person["ID"], person["AGE"], person["NAME"]))
     
     if len(living_singles_over_30) > 0:

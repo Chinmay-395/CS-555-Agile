@@ -12,13 +12,13 @@ def main(file_name):
     
     df_indi = DataFrame(list_indi)
     df_fam = DataFrame(list_fam)
-    print("DF \n ", df_indi, "\n")
-    print("DF \n ", df_fam, "\n")
-
+    # print("DF \n ", df_indi, "\n")
+    # print("DF \n ", df_fam, "\n")
+    # run sa3.ged
     listOrphans(df_indi,df_fam)
 
-
-    # listLivingSinglesOver30(df_indi)
+    # run Sachin_Devangan_CS_555_WS4.ged
+    listLivingSinglesOver30(df_indi)
     # listRecentBirths(df_indi)
 
-main('sa3.ged')
+main('Sachin_Devangan_CS_555_WS4.ged')
