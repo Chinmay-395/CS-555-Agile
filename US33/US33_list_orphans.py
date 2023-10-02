@@ -12,10 +12,7 @@ def listOrphans(individuals, families):
 def hasDeadParents(child_id, individuals, families):
     deadparents = False
     for index, row in families.iterrows():
-        # print("THE TYPE OF CHILDREN ", type(row['CHILDREN']))
-        res = ast.literal_eval(row['CHILDREN'])
-        # row['children'] != 'nan' does not work because it can be a list, so to check if entry is not empty check if it's a list
-        if type(row['CHILDREN']) is str and (child_id in res):
+        if type(row['CHILDREN']) is list and (child_id in row['CHILDREN']):
             husband_id = row['HUSBAND ID']
             wife_id = row['WIFE ID']
             deadparents = not individuals[individuals['ID']==husband_id].squeeze()['ALIVE'] and not individuals[individuals['ID']==wife_id].squeeze()['ALIVE']
