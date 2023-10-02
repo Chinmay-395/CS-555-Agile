@@ -8,6 +8,9 @@ ID, NAME, Gender, Birthday, Age, Alive, Death, Child, Spouse
 Families
 ID, Married, Divorced, Husband ID, Husband Name, Wife ID, Wife Name, Children
 '''
+def name_without_special_char(str_val:str):
+  output_string = str_val.replace('/', '')
+  return output_string
 
 """This function creates a new list for an individual"""
 def dataFrameOfIndividuals(file_name):
@@ -32,57 +35,57 @@ def dataFrameOfIndividuals(file_name):
         line = lines[j]
         level = line[0]
         if 'INDI' in line.split() and level == '0':
-          person['id'] = line.split()[1].replace('@','')
+          person['ID'] = line.split()[1].replace('@','')
         #   person['index'] = i
         if 'NAME' in line.split():
-          person['name'] = line.split('NAME')[1].replace('\n','')
-          indi_id_name_hmap[person['id']] = person['name']
+          person['NAME'] = name_without_special_char(name_without_special_char(line.split('NAME')[1].replace('\n','')))
+          indi_id_name_hmap[person['ID']] = person['NAME']
         if 'SEX' in line.split() and level == '1':
           person['gender'] = line.split()[2]
         if 'BIRT' in line.split():
-          person['birthday'] =  lines[j+1].split('DATE')[1].replace('\n','')
+          person['BIRTHDAY'] =  lines[j+1].split('DATE')[1].replace('\n','')
         if 'DEAT' in line.split():
           is_dead = True
-          person['death'] = lines[j+1].split('DATE')[1].replace('\n','')
+          person['DEATH'] = lines[j+1].split('DATE')[1].replace('\n','')
         if 'FAMC' in line.split():
-          person['child'] = line.split()[2].replace('@','')
+          person['CHILD'] = line.split()[2].replace('@','')
         if 'FAMS' in line.split():
-          if 'spouse' in person.keys():
-              person['spouse'].append(line.split()[2].replace('@',''))
+          if 'SPOUSE' in person.keys():
+              person['SPOUSE'].append(line.split()[2].replace('@',''))
           else :
-              person['spouse'] = [line.split()[2].replace('@','')]
+              person['SPOUSE'] = [line.split()[2].replace('@','')]
     else:
       for j in range(i,len(lines)-1):
         line = lines[j]
         level = line[0]
         if 'INDI' in line.split() and level == '0':
-          person['id'] = line.split()[1].replace('@','')
+          person['ID'] = line.split()[1].replace('@','')
         #   person['index'] = i
         if 'NAME' in line.split():
-          person['name'] = line.split('NAME')[1].replace('\n','')
-          indi_id_name_hmap[person['id']] = person['name']
+          person['NAME'] = name_without_special_char(line.split('NAME')[1].replace('\n',''))
+          indi_id_name_hmap[person['ID']] = person['NAME']
         if 'SEX' in line.split() and level == '1':
           person['gender'] = line.split()[2]
         if 'BIRT' in line.split():
-          person['birthday'] = lines[j+1].split('DATE')[1].replace('\n','')
+          person['BIRTHDAY'] = lines[j+1].split('DATE')[1].replace('\n','')
         if 'DEAT' in line.split():
           is_dead = True
-          person['death'] = lines[j+1].split('DATE')[1].replace('\n','')
+          person['DEATH'] = lines[j+1].split('DATE')[1].replace('\n','')
         if 'FAMC' in line.split():
-          person['child'] = line.split()[2].replace('@','')
+          person['CHILD'] = line.split()[2].replace('@','')
         if 'FAMS' in line.split():
-          if 'spouse' in person.keys():
-              person['spouse'].append(line.split()[2].replace('@',''))
+          if 'SPOUSE' in person.keys():
+              person['SPOUSE'].append(line.split()[2].replace('@',''))
           else :
-              person['spouse'] = [line.split()[2].replace('@','')]
+              person['SPOUSE'] = [line.split()[2].replace('@','')]
 
     if is_dead:
-       person['alive'] = False
-       person['age'] = relativedelta(datetime.strptime(person['death']," %d %b %Y"),datetime.strptime(person['birthday']," %d %b %Y")).years
+       person['ALIVE'] = False
+       person['AGE'] = relativedelta(datetime.strptime(person['DEATH']," %d %b %Y"),datetime.strptime(person['BIRTHDAY']," %d %b %Y")).years
     else:
-      person['alive'] = True
+      person['ALIVE'] = True
       today = datetime.today()
-      person['age'] = relativedelta(today, datetime.strptime(person['birthday']," %d %b %Y")).years
+      person['AGE'] = relativedelta(today, datetime.strptime(person['BIRTHDAY']," %d %b %Y")).years
 
 
     individuals.append(person)
@@ -111,63 +114,63 @@ def dataFrameOfFamilies(file_name, indi_id_name_hmap):
         line = lines[j]
         level = line[0]
         if 'FAM' in line.split() and level == '0':
-          family['id'] = line.split()[1].replace('@','')
-          family['index'] = i
+          family['ID'] = line.split()[1].replace('@','')
+        #   family['index'] = i
         if 'MARR' in line.split():
-          family['married'] = lines[j+1].split('DATE')[1].replace('\n','')
-          family['are divorced'] = False
+          family['MARRIED'] = lines[j+1].split('DATE')[1].replace('\n','')
+          family['DIVORCE STATUS'] = False
         if 'DIV' in line.split():
-          family['divorced'] = lines[j+1].split('DATE')[1].replace('\n','')
-          family['are divorced'] = True
+          family['DIVORCE'] = lines[j+1].split('DATE')[1].replace('\n','')
+          family['DIVORCE STATUS'] = True
         if 'HUSB' in line.split():
-          family['Husband ID'] = line.split()[2].replace('@','')
+          family['HUSBAND ID'] = line.split()[2].replace('@','')
           try:
-            family['Husband Name'] = indi_id_name_hmap[family['Husband ID']]
+            family['HUSBAND NAME'] = indi_id_name_hmap[family['HUSBAND ID']]
           except KeyError:
-            family['Husband Name'] = 'nan'
+            family['HUSBAND NAME'] = 'nan'
         if 'WIFE' in line.split():
-          family['Wife ID'] = line.split()[2].replace('@','')
+          family['WIFE ID'] = line.split()[2].replace('@','')
           try:
-            family['Wife Name'] = indi_id_name_hmap[family['Wife ID']]
+            family['WIFE NAME'] = indi_id_name_hmap[family['WIFE ID']]
           except KeyError:
-            family['Wife Name'] = 'nan'
+            family['WIFE NAME'] = 'nan'
         if 'CHIL' in line.split():
-          if 'children' in family: 
-            family['children'].append(line.split()[2].replace('@',''))
+          if 'CHILDREN' in family: 
+            family['CHILDREN'].append(line.split()[2].replace('@',''))
           else:
-            family['children'] = []
-            family['children'].append(line.split()[2].replace('@',''))
+            family['CHILDREN'] = []
+            family['CHILDREN'].append(line.split()[2].replace('@',''))
     else:
       for j in range(i,len(lines)-1):
         line = lines[j]
         level = line[0]
         if 'FAM' in line.split() and level == '0':
-          family['id'] = line.split()[1].replace('@','')
-          family['index'] = i
+          family['ID'] = line.split()[1].replace('@','')
+        #   family['index'] = i
         if 'MARR' in line.split():
-          family['married'] = lines[j+1].split('DATE')[1].replace('\n','')
-          family['are divorced'] = False
+          family['MARRIED'] = lines[j+1].split('DATE')[1].replace('\n','')
+          family['DIVORCE STATUS'] = False # this means they are previously divorced
         if 'DIV' in line.split():
-          family['are divorced'] = True
-          family['divorced'] = lines[j+1].split('DATE')[1].replace('\n','')
+          family['DIVORCE STATUS'] = True
+          family['DIVORCE'] = lines[j+1].split('DATE')[1].replace('\n','')
         if 'HUSB' in line.split():
-          family['Husband ID'] = line.split()[2].replace('@','')
+          family['HUSBAND ID'] = line.split()[2].replace('@','')
           try:
-            family['Husband Name'] = indi_id_name_hmap[family['Husband ID']]
+            family['HUSBAND NAME'] = indi_id_name_hmap[family['HUSBAND ID']]
           except KeyError:
-            family['Husband Name'] = 'nan'
+            family['HUSBAND NAME'] = 'nan'
         if 'WIFE' in line.split():
-          family['Wife ID'] = line.split()[2].replace('@','')
+          family['WIFE ID'] = line.split()[2].replace('@','')
           try:
-            family['Wife Name'] = indi_id_name_hmap[family['Wife ID']]
+            family['WIFE NAME'] = indi_id_name_hmap[family['WIFE ID']]
           except KeyError:
-            family['Wife Name'] = 'nan'
+            family['WIFE NAME'] = 'nan'
         if 'CHIL' in line.split():
-          if 'children' in family: 
-            family['children'].append(line.split()[2].replace('@',''))
+          if 'CHILDREN' in family: 
+            family['CHILDREN'].append(line.split()[2].replace('@',''))
           else:
-            family['children'] = []
-            family['children'].append(line.split()[2].replace('@',''))
+            family['CHILDREN'] = []
+            family['CHILDREN'].append(line.split()[2].replace('@',''))
 
     families.append(family)
 
