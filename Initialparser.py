@@ -125,7 +125,13 @@ def parse(file_name):
                 if(str[1] == 'SEX'):
                     indi[2] = str[2]
                 if(str[1] in ['BIRT', 'DEAT', 'MARR', 'DIV']):
-                    date_id = str[1]
+                    date_id = str[1] #here we are setting whatever the date is
+                    if(str[1] == 'BIRT'):
+                        indi[7] = "TRUE"
+                    if(str[1] == 'DEAT'):
+                        indi[7] = "FALSE"
+                    # if(str[1] == 'MARR'):
+
                 if(str[1] == 'FAMS'):
                     indi[5].append(str[2])
                 if(str[1] == 'FAMC'):
@@ -143,14 +149,14 @@ def parse(file_name):
                     date = str[4] + " " + str[3] + " " + str[2]
                     if(date_id == 'BIRT'):
                         indi[3] = date
-                        indi[7] = "TRUE"
+                        
                         date_format_as = str[2] + " " + str[3] + " " + str[4]
                         # print("date ",date_format_as)
                         indi[8] = calculate_age(date_format_as)
                         indi[4] = "NA" #death will be NA until it is explicitly mentioned
                     if(date_id == 'DEAT'):
                         indi[4] = date
-                        indi[7] = "FALSE"
+                        
                     # checking for married status    
                     if(date_id == 'MARR'):
                         fam[1] = date
