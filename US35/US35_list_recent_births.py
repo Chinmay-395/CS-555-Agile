@@ -5,9 +5,10 @@ def listRecentBirths(individuals, days=30):
     current_date = datetime.now() 
 
     for index, row in individuals.iterrows():
-        if row['BIRTHDAY'] != 'NA':  # Check if the birthdate is available in the data
-            # Parse the birthdate from GEDCOM format ('1999 JAN 1') to datetime object
-            birthdate = datetime.strptime(row['BIRTHDAY'], '%Y %b %d')
+        if row['BIRTHDAY'] != '':  # Check if the birthdate is available in the data
+            # Parse the birthdate from GEDCOM format (' 1999 JAN 1') to datetime object
+            # there is extra space that needs to be considered as dates are in string and they have a initial single character space
+            birthdate = datetime.strptime(row['BIRTHDAY'], " %d %b %Y")
             # Calculate the number of days between birthdate and current date
             days_since_birth = (current_date - birthdate).days
             

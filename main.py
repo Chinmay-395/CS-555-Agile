@@ -19,6 +19,6 @@ def main(file_name):
 
     # run Sachin_Devangan_CS_555_WS4.ged
     listLivingSinglesOver30(df_indi)
-    # listRecentBirths(df_indi)
+    listRecentBirths(df_indi)
 
 main('Sachin_Devangan_CS_555_WS4.ged')
