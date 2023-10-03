@@ -8,7 +8,6 @@ from US29.US29_list_deceased import listDeceased
 
 def main(file_name):
     list_indi, list_fam = parse(file_name)
-<<<<<<< HEAD
     # print("THE TOTAL NUMBER OF PEOPLE IN THE LIST", len(list_indi))
     
     
@@ -20,15 +19,6 @@ def main(file_name):
     listOrphans(df_indi,df_fam)
 
     # run Sachin_Devangan_CS_555_WS4.ged
-=======
-    print("THE TOTAL NUMBER OF PEOPLE IN THE LIST", len(list_indi))
-    print_Indi(list_indi)
-    print_Fam(list_fam)
-    df_indi = read_csv("individual_tb.csv")
-    df_fam = read_csv("family_tb.csv")
-    listOrphans(df_indi, df_fam)
-
->>>>>>> nouman
     listLivingSinglesOver30(df_indi)
     listRecentBirths(df_indi)
 
