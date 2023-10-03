@@ -1,13 +1,14 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+
 # list of headers in individual tables
-'''
+"""
 Individual Table:
 ID, NAME, Gender, Birthday, Age, Alive, Death, Child, Spouse
 
 Families
 ID, Married, Divorced, Husband ID, Husband Name, Wife ID, Wife Name, Children
-'''
+"""
 
 """This function creates a new list for an individual"""
 def dataFrameOfIndividuals(file_name):
@@ -175,7 +176,10 @@ def dataFrameOfFamilies(file_name, indi_id_name_hmap):
 
   return families
 
+
 """This function parses the GEDCOM File and returns 2 lists: one for individuals and another for families"""
+
+
 def parse(file_name):
     (individual_list_of_list, indi_id_name_hmap) = dataFrameOfIndividuals(file_name)
     family_list_of_list = dataFrameOfFamilies(file_name, indi_id_name_hmap)
