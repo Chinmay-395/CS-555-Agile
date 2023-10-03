@@ -8,6 +8,8 @@ def listOrphans(individuals, families):
     if len(orphans) > 0:
         print('US33: List of Orphans:')
         print(orphans) 
+    elif len(orphans) == 0:
+        print('US33: No orphans in this family tree')
 
 def hasDeadParents(child_id, individuals, families):
     deadparents = False
