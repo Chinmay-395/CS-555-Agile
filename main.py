@@ -7,7 +7,7 @@ from US35.US35_list_recent_births import listRecentBirths
 
 def main(file_name):
     list_indi, list_fam = parse(file_name)
-    print("THE TOTAL NUMBER OF PEOPLE IN THE LIST", len(list_indi))
+    # print("THE TOTAL NUMBER OF PEOPLE IN THE LIST", len(list_indi))
     
     
     df_indi = DataFrame(list_indi)
@@ -21,4 +21,4 @@ def main(file_name):
     listLivingSinglesOver30(df_indi)
     listRecentBirths(df_indi)
 
-main('/home/chinmay/Coding/Courses/CS555_WS4_Agile/Group_4_Assignment/US33/recent_orphans.ged')
+main('Sachin_Devangan_CS_555_WS4.ged')
