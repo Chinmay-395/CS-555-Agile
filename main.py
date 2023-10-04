@@ -4,7 +4,7 @@ from US33.US33_list_orphans import listOrphans
 from US31.US31_list_living_single import listLivingSinglesOver30
 from US35.US35_list_recent_births import listRecentBirths
 from US29.US29_list_deceased import listDeceased
-
+from US_04.UseCase_04 import test_marriage_after_divorce
 
 def main(file_name):
     list_indi, list_fam = parse(file_name)
@@ -23,6 +23,8 @@ def main(file_name):
     listRecentBirths(df_indi)
 
     print("List of Deceased People:", listDeceased(df_indi))
+
+    print("LIST OF ERRORS IN US_04 ", test_marriage_after_divorce(df_fam,df_indi))
 
 
 main("Sachin_Devangan_CS_555_WS4.ged")
