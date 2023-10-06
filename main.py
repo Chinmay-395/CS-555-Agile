@@ -5,6 +5,7 @@ from US31.US31_list_living_single import listLivingSinglesOver30
 from US35.US35_list_recent_births import listRecentBirths
 from US29.US29_list_deceased import listDeceased
 from US_04.UseCase_04 import test_marriage_after_divorce
+from US38.US38_list_upcoming_birthdays import listUpcomingBirthdays
 
 def main(file_name):
     list_indi, list_fam = parse(file_name)
@@ -21,6 +22,7 @@ def main(file_name):
     # run Sachin_Devangan_CS_555_WS4.ged
     listLivingSinglesOver30(df_indi)
     listRecentBirths(df_indi)
+    listUpcomingBirthdays(df_indi)
 
     print("List of Deceased People:", listDeceased(df_indi))
 
