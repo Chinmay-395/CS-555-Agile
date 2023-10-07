@@ -1,10 +1,11 @@
 from datetime import datetime
 import pandas as pd
 
-def convert_gedcom_date_to_datetime(gedcom_date):
+def convert_gedcom_date_to_datetime(gedcom_date, each_row):
     try:
         return datetime.strptime(gedcom_date.strip(), '%d %b %Y')
     except ValueError:
+        print(f"ERROR: FAMILY: Incorrect data for marriage {each_row['MARRIED']} in family ID {each_row['ID']}")
         return None
 
 def test_marriage_before_death(families, individuals):
@@ -13,7 +14,7 @@ def test_marriage_before_death(families, individuals):
         if row["MARRIED"] is not None:
             husband = row["HUSBAND ID"]
             wife = row["WIFE ID"]
-            marriage_date = convert_gedcom_date_to_datetime(row["MARRIED"])
+            marriage_date = convert_gedcom_date_to_datetime(row["MARRIED"], row)
             husband_death_date = individuals[individuals['ID']==husband].squeeze()['DEATH']
             wife_death_date = individuals[individuals['ID']==wife].squeeze()['DEATH']
             if not pd.isna(husband_death_date):
@@ -24,4 +25,6 @@ def test_marriage_before_death(families, individuals):
                 wife_death_date = convert_gedcom_date_to_datetime(wife_death_date)
                 if wife_death_date<marriage_date:
                     errors.append([husband,wife])
-    return errors
+    # return errors
+    for each_err in errors:
+        print(f"ERROR: FAMILY: US05 Husband ID {each_err[0]} Wife ID {each_err[1]}")
