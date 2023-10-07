@@ -39,7 +39,7 @@ def dataFrameOfIndividuals(file_name):
           person['NAME'] = line.split('NAME')[1].replace('\n','')
           indi_id_name_hmap[person['ID']] = person['NAME']
         if 'SEX' in line.split() and level == '1':
-          person['gender'] = line.split()[2]
+          person['GENDER'] = line.split()[2]
         if 'BIRT' in line.split():
           person['BIRTHDAY'] =  lines[j+1].split('DATE')[1].replace('\n','')
         if 'DEAT' in line.split():
@@ -63,7 +63,7 @@ def dataFrameOfIndividuals(file_name):
           person['NAME'] = line.split('NAME')[1].replace('\n','')
           indi_id_name_hmap[person['ID']] = person['NAME']
         if 'SEX' in line.split() and level == '1':
-          person['gender'] = line.split()[2]
+          person['GENDER'] = line.split()[2]
         if 'BIRT' in line.split():
           person['BIRTHDAY'] = lines[j+1].split('DATE')[1].replace('\n','')
         if 'DEAT' in line.split():
