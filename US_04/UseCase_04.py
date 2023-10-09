@@ -21,6 +21,9 @@ def test_marriage_after_divorce(families, individuals):
             if divorce_date<marriage_date:
                 print(f'ERROR: FAMILY: US04: husband: {row["HUSBAND ID"]} {row["HUSBAND NAME"]} and wife: {row["WIFE ID"]} {row["WIFE NAME"]}') 
                 errors.append([row["HUSBAND ID"],row["WIFE ID"]])
+
+    if len(errors) == 0:
+        print("US04: No marriages before divorce")
             
 
     

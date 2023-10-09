@@ -9,7 +9,7 @@ def is_within_last_30_days(event_date):
 # List all living spouses and descendants of people in a GEDCOM file who died in the last 30 days
 # Assuming spouses mean they were married at one point and don't have to be together
 def list_recent_survivors(individuals, families):
-    print("HELLOOO")
+    # print("HELLOOO")
     recent_survivors = []
     for index, row in individuals.iterrows():
         if not row['ALIVE']:
@@ -42,5 +42,8 @@ def list_recent_survivors(individuals, families):
                 }
                 recent_survivors.append(new_recent_survivors)
 
-    # print("US37: The list of all living spouses and descendants of people who died in the last 30 days: " + str(recent_survivors))
+    if len(recent_survivors)>0:
+        print("US37: The list of all living spouses and descendants of people who died in the last 30 days: " + str(recent_survivors))
+    elif len(recent_survivors) == 0:
+        print("US37: No recent survivors found ")
     # printingAllTheStuff(pd.DataFrame())
