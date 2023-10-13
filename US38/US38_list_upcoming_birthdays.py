@@ -1,6 +1,13 @@
+import pandas as pd
 from datetime import datetime
 
 def listUpcomingBirthdays(individuals, days=30):
+    # Data Validation
+    if not isinstance(individuals, pd.DataFrame):
+        return "ERROR: US38: Input parameter of wrong type."
+    if len(individuals) == 0:
+        return "ANOMALY: US38: No family members available."
+
     upcoming_birthdays = []  
     current_date = datetime.now() 
 
@@ -23,8 +30,10 @@ def listUpcomingBirthdays(individuals, days=30):
                 upcoming_birthdays.append((row['ID'], row['BIRTHDAY'], row['NAME']))
                 
     if len(upcoming_birthdays) > 0:
-        print('US35: List of Upcoming birthday (next', days, 'days):')
-        print(upcoming_birthdays)
+        # print('US35: List of Upcoming birthday (next', days, 'days):')
+        # print(upcoming_birthdays)
+        return upcoming_birthdays
     else:
-        print('US35: No Upcoming birthday found in the next', days, 'days.')
+        # print('US35: No Upcoming birthday found in the next', days, 'days.')
+         return 'US38: There are no Upcoming Birthdays in the GEDCOM file.'
 
