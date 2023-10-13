@@ -1,38 +1,3 @@
-# from US38_list_upcoming_birthdays import listUpcomingBirthdays
-# import unittest
-# import pandas as pd
-
-
-# class TestUS35(unittest.TestCase):
-#     def testUpcomingBirthdayList1(self):
-#         data = [
-#     ["@I8@", "Bhaskar Devangan", "M", " 18 OCT 1981", "NA", ['@F4@'], "@F2@", True, 41],
-#     ["@I9@", "Laxmi Devangan", "F", " 30 OCT 1982", "NA", ['@F4@'], 0, True, 40]
-# ]
-
-#         columns = [
-#             "ID",
-#             "NAME",
-#             "GENDER",
-#             "BIRTHDAY",
-#             "DEATH",
-#             "CHILD",
-#             "SPOUSE",
-#             "ALIVE",
-#             "AGE",
-#         ]
-#         df = pd.DataFrame(data, columns=columns)
-
-#         self.assertEqual(
-#             listUpcomingBirthdays(df),
-#             ['I8', ' 18 OCT 1981', ' Bhaskar /Devangan/', 'I9', ' 30 OCT 1982', ' Laxmi /Devangan/'],
-#             "listUpcomingBirthdays() did not produce expected output.",
-#         )
-
-# if __name__ == "__main__":
-#     unittest.main()
-
-
 from US38_list_upcoming_birthdays import listUpcomingBirthdays
 import unittest
 import pandas as pd
