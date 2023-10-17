@@ -1,8 +1,8 @@
 0 HEAD
 1 SOUR Family Echo
 2 WWW http://www.familyecho.com/
-1 FILE Family 2
-1 DATE 30 SEP 2023
+1 FILE Family 3
+1 DATE 5 OCT 2023
 1 DEST ANSTFILE
 1 GEDC
 2 VERS 5.5.1
@@ -130,7 +130,7 @@
 2 _MARNM Devangan
 1 SEX M
 1 BIRT
-2 DATE 14 SEP 2023
+2 DATE 1 OCT 2023
 1 FAMC @F3@
 0 @I14@ INDI
 1 NAME Harshita /Devangan/
@@ -139,7 +139,7 @@
 2 _MARNM Devangan
 1 SEX F
 1 BIRT
-2 DATE 17 DEC 2006
+2 DATE 17 OCT 2006
 1 FAMC @F5@
 0 @I15@ INDI
 1 NAME Manas /Devangan/

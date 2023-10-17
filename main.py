@@ -8,6 +8,10 @@ from US31.US31_list_living_single import listLivingSinglesOver30
 from US33.US33_list_orphans import listOrphans
 from US35.US35_list_recent_births import listRecentBirths
 from US_04.UseCase_04 import test_marriage_after_divorce
+
+from US38.US38_list_upcoming_birthdays import listUpcomingBirthdays
+from US41.US41_include_partial_dates import parse_partial_date
+
 from US37.US37_list_recent_Survivors import list_recent_survivors
 # from US27.US27_include_age import include_individual_ages
 from US05.UseCase_05 import test_marriage_before_death
@@ -28,6 +32,13 @@ def main(file_name):
     # run Sachin_Devangan_CS_555_WS4.ged
     listLivingSinglesOver30(df_indi)
     listRecentBirths(df_indi)
+    print("US38: List of Upcoming Birthdays",listUpcomingBirthdays(df_indi) )
+    # Examples:
+    # print(parse_partial_date("1990"))        # Output: 1990-01-01
+    # print(parse_partial_date("MAR 1990"))    # Output: 1990-03-01
+    # print(parse_partial_date("15 MAR 1990"))  # Output: 1990-03-15
+    # print(parse_partial_date("JAN 15"))      # Output: None (Invalid, unable to parse)
+
 
     print("US29: List of Deceased People:", listDeceased(df_indi))
     # US04	Marriage before divorce
