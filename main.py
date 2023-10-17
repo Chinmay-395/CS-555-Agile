@@ -23,12 +23,12 @@ def main(file_name):
     # run Sachin_Devangan_CS_555_WS4.ged
     listLivingSinglesOver30(df_indi)
     listRecentBirths(df_indi)
-    listUpcomingBirthdays(df_indi)
+    print("US38: List of Upcoming Birthdays",listUpcomingBirthdays(df_indi) )
     # Examples:
-    print(parse_partial_date("1990"))        # Output: 1990-01-01
-    print(parse_partial_date("MAR 1990"))    # Output: 1990-03-01
-    print(parse_partial_date("15 MAR 1990"))  # Output: 1990-03-15
-    print(parse_partial_date("JAN 15"))      # Output: None (Invalid, unable to parse)
+    # print(parse_partial_date("1990"))        # Output: 1990-01-01
+    # print(parse_partial_date("MAR 1990"))    # Output: 1990-03-01
+    # print(parse_partial_date("15 MAR 1990"))  # Output: 1990-03-15
+    # print(parse_partial_date("JAN 15"))      # Output: None (Invalid, unable to parse)
 
 
     print("List of Deceased People:", listDeceased(df_indi))
