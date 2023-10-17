@@ -39,7 +39,7 @@ def dataFrameOfIndividuals(file_name):
           person['NAME'] = line.split('NAME')[1].replace('\n','')
           indi_id_name_hmap[person['ID']] = person['NAME']
         if 'SEX' in line.split() and level == '1':
-          person['GENDER'] = line.split()[2]
+          person['gender'] = line.split()[2]
         if 'BIRT' in line.split():
           person['BIRTHDAY'] =  lines[j+1].split('DATE')[1].replace('\n','')
         if 'DEAT' in line.split():
@@ -63,7 +63,7 @@ def dataFrameOfIndividuals(file_name):
           person['NAME'] = line.split('NAME')[1].replace('\n','')
           indi_id_name_hmap[person['ID']] = person['NAME']
         if 'SEX' in line.split() and level == '1':
-          person['GENDER'] = line.split()[2]
+          person['gender'] = line.split()[2]
         if 'BIRT' in line.split():
           person['BIRTHDAY'] = lines[j+1].split('DATE')[1].replace('\n','')
         if 'DEAT' in line.split():
@@ -178,7 +178,6 @@ def dataFrameOfFamilies(file_name, indi_id_name_hmap):
 
 
 """This function parses the GEDCOM File and returns 2 lists: one for individuals and another for families"""
-
 
 def parse(file_name):
     (individual_list_of_list, indi_id_name_hmap) = dataFrameOfIndividuals(file_name)
