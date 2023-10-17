@@ -7,7 +7,7 @@ def convert_gedcom_date_to_datetime(gedcom_date, each_row):
 def test_divorce_before_death(families, individuals):
     errors = []
     for index, row in families.iterrows():
-        if row["MARRIED"] is not None and row["DIVORCE"] is not None:
+        if 'MARRIED' in families and 'DIVORCE' in families and row["MARRIED"] is not None and row["DIVORCE"] is not None:
             husband = row["HUSBAND ID"]
             wife = row["WIFE ID"]
             divorce_date = convert_gedcom_date_to_datetime(row["DIVORCE"], row)

@@ -1,0 +1,282 @@
+0 HEAD
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE Family 2
+1 DATE 30 SEP 2023
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I1@
+2 NAME Sachin Devangan
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Sachin /Devangan/
+2 GIVN Sachin
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 1 JAN 1999
+1 FAMC @F1@
+0 @I2@ INDI
+1 NAME Radheshyam /Jaiswal/
+2 GIVN Radheshyam
+2 SURN Jaiswal
+2 _MARNM Jaiswal
+1 SEX M
+1 BIRT
+2 DATE 14 MAY 1979
+1 FAMS @F1@
+0 @I3@ INDI
+1 NAME Ranjana /Devangan/
+2 GIVN Ranjana
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX F
+1 BIRT
+2 DATE 2 FEB 1979
+1 FAMS @F1@
+1 FAMC @F2@
+0 @I4@ INDI
+1 NAME Radhelal /Devangan/
+2 GIVN Radhelal
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 4 JUL 1960
+1 FAMS @F2@
+0 @I5@ INDI
+1 NAME Meena /Devangan/
+2 GIVN Meena
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX F
+1 BIRT
+2 DATE 6 JUN 1965
+1 FAMS @F2@
+0 @I6@ INDI
+1 NAME Abhishek /Devangan/
+2 GIVN Abhishek
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 16 MAR 1985
+1 FAMS @F3@
+1 FAMC @F2@
+0 @I7@ INDI
+1 NAME Meenakshi /Devangan/
+2 GIVN Meenakshi
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX F
+1 BIRT
+2 DATE 13 MAR 1985
+1 FAMS @F3@
+0 @I8@ INDI
+1 NAME Bhaskar /Devangan/
+2 GIVN Bhaskar
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 18 OCT 1981
+1 FAMS @F4@
+1 FAMC @F2@
+0 @I9@ INDI
+1 NAME Laxmi /Devangan/
+2 GIVN Laxmi
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX F
+1 BIRT
+2 DATE 30 OCT 1982
+1 FAMS @F4@
+0 @I10@ INDI
+1 NAME Geetmala /Devangan/
+2 GIVN Geetmala
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX F
+1 BIRT
+2 DATE 13 DEC 1983
+1 FAMS @F5@
+1 FAMC @F2@
+0 @I11@ INDI
+1 NAME Ram /Devangan/
+2 GIVN Ram
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 7 JUN 1978
+1 FAMS @F5@
+0 @I12@ INDI
+1 NAME Ayan /Devangan/
+2 GIVN Ayan
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 14 NOV 2018
+1 FAMC @F3@
+0 @I13@ INDI
+1 NAME Veer /Devangan/
+2 GIVN Veer
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 14 SEP 2023
+1 FAMC @F3@
+0 @I14@ INDI
+1 NAME Harshita /Devangan/
+2 GIVN Harshita
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX F
+1 BIRT
+2 DATE 17 DEC 2006
+1 FAMC @F5@
+0 @I15@ INDI
+1 NAME Manas /Devangan/
+2 GIVN Manas
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 5 JUN 2011
+1 FAMC @F5@
+0 @I16@ INDI
+1 NAME Peehu /Devangan/
+2 GIVN Peehu
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX F
+1 BIRT
+2 DATE 3 APR 2019
+1 FAMC @F4@
+0 @I17@ INDI
+1 NAME Rahul /Devangan/
+2 GIVN Rahul
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 4 APR 1990
+1 FAMS @F6@
+1 FAMS @F7@
+1 FAMC @F2@
+0 @I18@ INDI
+1 NAME Deepika /Padukone/
+2 GIVN Deepika
+2 SURN Padukone
+2 _MARNM Devangan
+1 SEX F
+1 BIRT
+2 DATE 3 SEP 1991
+1 FAMS @F6@
+0 @I19@ INDI
+1 NAME Alia /Bhatt/
+2 GIVN Alia
+2 SURN Bhatt
+2 _MARNM Devangan
+1 SEX F
+1 BIRT
+2 DATE 5 MAR 1990
+1 DEAT Y
+2 DATE 5 MAR 1990
+1 FAMS @F7@
+0 @I20@ INDI
+1 NAME Ranbir /Devangan/
+2 GIVN Ranbir
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 2 APR 2019
+1 FAMC @F7@
+0 @I21@ INDI
+1 NAME Varun /Devangan/
+2 GIVN Varun
+2 SURN Devangan
+2 _MARNM Devangan
+1 SEX M
+1 BIRT
+2 DATE 6 AUG 2022
+1 FAMC @F6@
+0 @F1@ FAM
+1 HUSB @I2@
+1 WIFE @I3@
+1 CHIL @I1@
+1 MARR
+2 DATE 7 MAY 1995
+2 PLAC Raipur
+1 _CURRENT Y
+1 _PRIMARY Y
+0 @F2@ FAM
+1 HUSB @I4@
+1 WIFE @I5@
+1 CHIL @I3@
+1 CHIL @I6@
+1 CHIL @I8@
+1 CHIL @I10@
+1 CHIL @I17@
+1 MARR
+2 DATE 8 MAR 1978
+2 PLAC Bilaspur
+1 _CURRENT Y
+1 _PRIMARY Y
+0 @F3@ FAM
+1 HUSB @I6@
+1 WIFE @I7@
+1 CHIL @I12@
+1 CHIL @I13@
+1 MARR
+2 DATE 16 DEC 2015
+2 PLAC Bilaspur
+1 _CURRENT Y
+1 _PRIMARY Y
+0 @F4@ FAM
+1 HUSB @I8@
+1 WIFE @I9@
+1 CHIL @I16@
+1 MARR
+2 DATE 5 APR 2010
+2 PLAC Bilaspur
+1 _CURRENT Y
+1 _PRIMARY Y
+0 @F5@ FAM
+1 HUSB @I11@
+1 WIFE @I10@
+1 CHIL @I14@
+1 CHIL @I15@
+1 MARR
+2 DATE 11 OCT 2004
+2 PLAC Bilaspur
+1 _CURRENT Y
+1 _PRIMARY Y
+0 @F6@ FAM
+1 HUSB @I17@
+1 WIFE @I18@
+1 CHIL @I21@
+1 MARR
+2 DATE 8 AUG 2020
+2 PLAC Bilaspur
+1 _CURRENT Y
+1 _PRIMARY Y
+0 @F7@ FAM
+1 HUSB @I17@
+1 WIFE @I19@
+1 CHIL @I20@
+1 MARR
+2 DATE 7 MAR 2016
+2 PLAC Bilaspur
+1 EVEN
+2 TYPE Ending
+1 _CURRENT N
+1 _PRIMARY N
+0 TRLR
