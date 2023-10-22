@@ -7,10 +7,14 @@ from US29.US29_list_deceased import listDeceased
 from US31.US31_list_living_single import listLivingSinglesOver30
 from US33.US33_list_orphans import listOrphans
 from US35.US35_list_recent_births import listRecentBirths
-from US_04.UseCase_04 import test_marriage_after_divorce
+from US04.UseCase_04 import test_marriage_after_divorce
 
 from US38.US38_list_upcoming_birthdays import listUpcomingBirthdays
 from US41.US41_include_partial_dates import parse_partial_date
+from US10.US10_Marriage_after_14 import listValidMarriages
+from US02.US02_birth_before_marriage import validateBirthBeforeMarriage
+from US22.US22_unique_ids import check_unique_ids
+from US28.US28_order_siblings_by_age import order_siblings_by_age
 
 from US37.US37_list_recent_Survivors import list_recent_survivors
 # from US27.US27_include_age import include_individual_ages
@@ -38,11 +42,19 @@ def main(file_name):
     # print(parse_partial_date("MAR 1990"))    # Output: 1990-03-01
     # print(parse_partial_date("15 MAR 1990"))  # Output: 1990-03-15
     # print(parse_partial_date("JAN 15"))      # Output: None (Invalid, unable to parse)
+    listValidMarriages(df_fam,df_indi)
+    validateBirthBeforeMarriage(df_indi,df_fam)
+    check_unique_ids(df_indi,df_fam)
+    result = order_siblings_by_age(df_indi,df_fam)
+    print(result)
+    
+    
+
 
 
     print("US29: List of Deceased People:", listDeceased(df_indi))
     # US04	Marriage before divorce
-    test_marriage_after_divorce(df_fam, df_indi)
+    # test_marriage_after_divorce(df_fam, df_indi)
     # US37	List recent survivors
     list_recent_survivors(df_indi, df_fam)
 
@@ -51,7 +63,7 @@ def main(file_name):
     test_marriage_before_death(df_fam, df_indi)
 
     # list upcoming anniversaries
-    print("US39: List Upcoming Anniverseries: ",
+    print("US39: List Upcoming Anniversaries: ",
           listUpcomingAnniversaries(df_indi, df_fam))
 
 
