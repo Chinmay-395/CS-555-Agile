@@ -7,6 +7,7 @@ from US29.US29_list_deceased import listDeceased
 from US_04.UseCase_04 import test_marriage_after_divorce
 from US38.US38_list_upcoming_birthdays import listUpcomingBirthdays
 from US41.US41_include_partial_dates import parse_partial_date
+from US10.US10_Marriage_after_14 import listValidMarriages
 
 def main(file_name):
     list_indi, list_fam = parse(file_name)
@@ -29,6 +30,7 @@ def main(file_name):
     # print(parse_partial_date("MAR 1990"))    # Output: 1990-03-01
     # print(parse_partial_date("15 MAR 1990"))  # Output: 1990-03-15
     # print(parse_partial_date("JAN 15"))      # Output: None (Invalid, unable to parse)
+    listValidMarriages(df_fam,df_indi)
 
 
     print("List of Deceased People:", listDeceased(df_indi))
