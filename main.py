@@ -12,6 +12,7 @@ from US04.UseCase_04 import test_marriage_after_divorce
 from US38.US38_list_upcoming_birthdays import listUpcomingBirthdays
 from US41.US41_include_partial_dates import parse_partial_date
 from US10.US10_Marriage_after_14 import listValidMarriages
+from US02.US02_birth_before_marriage import validateBirthBeforeMarriage
 
 from US37.US37_list_recent_Survivors import list_recent_survivors
 # from US27.US27_include_age import include_individual_ages
@@ -40,6 +41,9 @@ def main(file_name):
     # print(parse_partial_date("15 MAR 1990"))  # Output: 1990-03-15
     # print(parse_partial_date("JAN 15"))      # Output: None (Invalid, unable to parse)
     listValidMarriages(df_fam,df_indi)
+    validateBirthBeforeMarriage(df_indi,df_fam)
+    
+
 
 
     print("US29: List of Deceased People:", listDeceased(df_indi))
