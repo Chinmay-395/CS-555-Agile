@@ -7,7 +7,7 @@ from US29.US29_list_deceased import listDeceased
 from US31.US31_list_living_single import listLivingSinglesOver30
 from US33.US33_list_orphans import listOrphans
 from US35.US35_list_recent_births import listRecentBirths
-from US_04.UseCase_04 import test_marriage_after_divorce
+# from US_04.UseCase_04 import test_marriage_after_divorce
 
 from US38.US38_list_upcoming_birthdays import listUpcomingBirthdays
 from US41.US41_include_partial_dates import parse_partial_date
@@ -44,7 +44,7 @@ def main(file_name):
 
     print("US29: List of Deceased People:", listDeceased(df_indi))
     # US04	Marriage before divorce
-    test_marriage_after_divorce(df_fam, df_indi)
+    # test_marriage_after_divorce(df_fam, df_indi)
     # US37	List recent survivors
     list_recent_survivors(df_indi, df_fam)
 
