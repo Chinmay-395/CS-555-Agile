@@ -13,6 +13,7 @@ from US38.US38_list_upcoming_birthdays import listUpcomingBirthdays
 from US41.US41_include_partial_dates import parse_partial_date
 from US10.US10_Marriage_after_14 import listValidMarriages
 from US02.US02_birth_before_marriage import validateBirthBeforeMarriage
+from US22.US22_unique_ids import check_unique_ids
 
 from US37.US37_list_recent_Survivors import list_recent_survivors
 # from US27.US27_include_age import include_individual_ages
@@ -26,8 +27,8 @@ def main(file_name):
 
     df_indi = DataFrame(list_indi)
     df_fam = DataFrame(list_fam)
-    print("DF indi\n ", df_indi, "\n")
-    print("DF fam \n ", df_fam, "\n")
+    # print("DF indi\n ", df_indi, "\n")
+    # print("DF fam \n ", df_fam, "\n")
     # run sa3.ged
     listOrphans(df_indi, df_fam)
 
@@ -42,6 +43,8 @@ def main(file_name):
     # print(parse_partial_date("JAN 15"))      # Output: None (Invalid, unable to parse)
     listValidMarriages(df_fam,df_indi)
     validateBirthBeforeMarriage(df_indi,df_fam)
+    result = check_unique_ids(df_indi,df_fam)
+    print(result)
     
 
 
