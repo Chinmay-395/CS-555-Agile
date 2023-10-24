@@ -20,6 +20,7 @@ from US37.US37_list_recent_Survivors import list_recent_survivors
 # from US27.US27_include_age import include_individual_ages
 from US05.UseCase_05 import test_marriage_before_death
 from US39.US39_list_upcoming_anniversaries import listUpcomingAnniversaries
+from US36.US36_list_recent_deaths import listRecentDeaths
 
 
 def main(file_name):
@@ -36,21 +37,17 @@ def main(file_name):
     # run Sachin_Devangan_CS_555_WS4.ged
     listLivingSinglesOver30(df_indi)
     listRecentBirths(df_indi)
-    print("US38: List of Upcoming Birthdays",listUpcomingBirthdays(df_indi) )
+    print("US38: List of Upcoming Birthdays", listUpcomingBirthdays(df_indi))
     # Examples:
     # print(parse_partial_date("1990"))        # Output: 1990-01-01
     # print(parse_partial_date("MAR 1990"))    # Output: 1990-03-01
     # print(parse_partial_date("15 MAR 1990"))  # Output: 1990-03-15
     # print(parse_partial_date("JAN 15"))      # Output: None (Invalid, unable to parse)
-    listValidMarriages(df_fam,df_indi)
-    validateBirthBeforeMarriage(df_indi,df_fam)
-    check_unique_ids(df_indi,df_fam)
-    result = order_siblings_by_age(df_indi,df_fam)
+    listValidMarriages(df_fam, df_indi)
+    validateBirthBeforeMarriage(df_indi, df_fam)
+    check_unique_ids(df_indi, df_fam)
+    result = order_siblings_by_age(df_indi, df_fam)
     print(result)
-    
-    
-
-
 
     print("US29: List of Deceased People:", listDeceased(df_indi))
     # US04	Marriage before divorce
@@ -65,6 +62,8 @@ def main(file_name):
     # list upcoming anniversaries
     print("US39: List Upcoming Anniversaries: ",
           listUpcomingAnniversaries(df_indi, df_fam))
+
+    listRecentDeaths(df_indi)
 
 
 main("Sachin_Devangan_CS_555_WS4.ged")
