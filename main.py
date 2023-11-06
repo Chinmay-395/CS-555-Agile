@@ -21,6 +21,7 @@ from US37.US37_list_recent_Survivors import list_recent_survivors
 from US05.UseCase_05 import test_marriage_before_death
 from US39.US39_list_upcoming_anniversaries import listUpcomingAnniversaries
 from US36.US36_list_recent_deaths import listRecentDeaths
+from US42.US42_reject_illegitimate_dates import rejectIllegitimateDates
 
 
 def main(file_name):
@@ -64,6 +65,8 @@ def main(file_name):
           listUpcomingAnniversaries(df_indi, df_fam))
 
     listRecentDeaths(df_indi)
+
+    print(rejectIllegitimateDates(df_indi, df_fam))
 
 
 main("Sachin_Devangan_CS_555_WS4.ged")
