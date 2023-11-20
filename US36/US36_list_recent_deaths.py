@@ -20,6 +20,6 @@ def listRecentDeaths(individuals, days=30):
 
     if len(recent_deaths) > 0:
 
-        return f"US35: List of Recent Deaths in the (last', {days}, 'days): {recent_deaths}"
+        return f"US36: List of Recent Deaths in the (last', {days}, 'days): {recent_deaths}"
     else:
-        return f"US35: No recent deaths found in the last {days} days."
+        return f"US36: No recent deaths found in the last {days} days."
