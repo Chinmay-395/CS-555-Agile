@@ -12,7 +12,7 @@ def convert_gedcom_date_to_datetime(gedcom_date, each_row):
 def test_marriage_before_death(families, individuals):
     errors = []
     for index, row in families.iterrows():
-        if row["MARRIED"] is not None:
+        if "MARRIED" in families and row["MARRIED"] is not None:
             husband = row["HUSBAND ID"]
             wife = row["WIFE ID"]
             # print("type: ",type(row))
