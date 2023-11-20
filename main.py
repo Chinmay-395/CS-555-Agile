@@ -1,24 +1,32 @@
 from pandas import DataFrame
 from Initialparser import parse
 from US01.US01_dates_before_curr_date import dates_before_current_date
-from US07.US07_less_than_150 import less_than_150_years
-
+from US02.US02_birth_before_marriage import validateBirthBeforeMarriage
 from US03.US03_birth_before_death import birthBeforeDeath
 from US04.UseCase_04 import test_marriage_after_divorce
 from US05.UseCase_05 import test_marriage_before_death
 from US06.US_06 import test_divorce_before_death
+from US07.US07_less_than_150 import less_than_150_years
 from US08.US08_birth_before_marr import birth_before_marriage_of_parents
+from US10.US10_Marriage_after_14 import listValidMarriages
+from US12.US12_parents_not_too_old import parents_not_too_old
 from US13.US_13 import check_sibling_birth_dates
+# from US_16. #commented out because it is not completed
+from US22.US22_unique_ids import check_unique_ids
 from US27.US27_include_age import include_individual_ages
+from US28.US28_order_siblings_by_age import order_siblings_by_age
 from US29.US29_list_deceased import listDeceased
+from US30.US30_list_living_married import list_living_married
 from US31.US31_list_living_single import listLivingSinglesOver30
+from US32.US32_List_multiple_births import *
 from US33.US33_list_orphans import listOrphans
 from US35.US35_list_recent_births import listRecentBirths
-
+from US36.US36_list_recent_deaths import listRecentDeaths
 from US37.US37_list_recent_Survivors import list_recent_survivors
 from US38.US38_list_upcoming_birthdays import listUpcomingBirthdays
 from US39.US39_list_upcoming_anniversaries import listUpcomingAnniversaries
-from US36.US36_list_recent_deaths import listRecentDeaths
+from US40.US40_include_ip_lines import get_line
+from US41.US41_include_partial_dates import parse_partial_date
 from US42.US42_reject_illegitimate_dates import rejectIllegitimateDates
 
 # US40 won't be included its a generic function for printing errors in dates of birth in individuals
