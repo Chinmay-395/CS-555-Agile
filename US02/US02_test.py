@@ -1,4 +1,4 @@
-from US02.US02_birth_before_marriage import validateBirthBeforeMarriage
+from US02_birth_before_marriage import validateBirthBeforeMarriage
 import unittest
 import pandas as pd
 
