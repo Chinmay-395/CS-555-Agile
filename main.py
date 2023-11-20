@@ -16,14 +16,11 @@ from US35.US35_list_recent_births import listRecentBirths
 from US37.US37_list_recent_Survivors import list_recent_survivors
 from US38.US38_list_upcoming_birthdays import listUpcomingBirthdays
 from US39.US39_list_upcoming_anniversaries import listUpcomingAnniversaries
-<<<<<<< HEAD
 from US36.US36_list_recent_deaths import listRecentDeaths
 from US42.US42_reject_illegitimate_dates import rejectIllegitimateDates
 
-=======
 # US40 won't be included its a generic function for printing errors in dates of birth in individuals
 # US41 won't be included its a generic function for to check valid dates
->>>>>>> main
 
 def main(file_name):
     list_indi, list_fam = parse(file_name)
@@ -41,7 +38,6 @@ def main(file_name):
     # # run Sachin_Devangan_CS_555_WS4.ged
     listLivingSinglesOver30(df_indi)
     listRecentBirths(df_indi)
-<<<<<<< HEAD
     print("US38: List of Upcoming Birthdays", listUpcomingBirthdays(df_indi))
     # Examples:
     # print(parse_partial_date("1990"))        # Output: 1990-01-01
@@ -58,9 +54,7 @@ def main(file_name):
     # US04	Marriage before divorce
     # test_marriage_after_divorce(df_fam, df_indi)
     # US37	List recent survivors
-=======
 
->>>>>>> main
     list_recent_survivors(df_indi, df_fam)
 
     # include_individual_ages(df_indi, df_fam) # this is from sprint-2 
@@ -89,9 +83,3 @@ def main(file_name):
 
 
 main("sa4.ged")
-# print("--------------------------------------------- \n")
-# main("sa2.ged")
-# print("--------------------------------------------- \n")
-# main("sa3.ged")
-# print("--------------------------------------------- \n")
-# main("test_ged_file.ged")
