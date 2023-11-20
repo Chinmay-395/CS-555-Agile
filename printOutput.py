@@ -1,5 +1,4 @@
 import pandas as pd
-from prettytable import PrettyTable
 
 def printingAllTheStuff(US_name,indi_df, fam_df, errors, anomalies):
     """The output of the every table will be in a single as well as the console for logging the issues
