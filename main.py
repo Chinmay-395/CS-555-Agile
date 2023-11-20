@@ -29,8 +29,6 @@ from US40.US40_include_ip_lines import get_line
 from US41.US41_include_partial_dates import parse_partial_date
 from US42.US42_reject_illegitimate_dates import rejectIllegitimateDates
 
-# US40 won't be included its a generic function for printing errors in dates of birth in individuals
-# US41 won't be included its a generic function for to check valid dates
 
 def main(file_name):
     list_indi, list_fam = parse(file_name)
@@ -38,10 +36,9 @@ def main(file_name):
 
     df_indi = DataFrame(list_indi)
     df_fam = DataFrame(list_fam)
-    print("DF indi\n ", df_indi, "\n")
+    print("The Individuals Table\n ", df_indi, "\n")
     df_indi.to_csv("individual_tb.csv", encoding='utf-8', index=False)
-    print("DF fam \n ", df_fam, "\n")
-
+    print("The Family Table \n ", df_fam, "\n")
     df_fam.to_csv("family_tb.csv", encoding='utf-8', index=False)
 
     # run sa3.ged
