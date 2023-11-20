@@ -1,7 +1,7 @@
-from pandas import DataFrame, read_csv
-
-import pandas as pd
+from pandas import DataFrame
 from Initialparser import parse
+from US01.US01_dates_before_curr_date import dates_before_current_date
+from US07.US07_less_than_150 import less_than_150_years
 from US03.US03_birth_before_death import birthBeforeDeath
 from US29.US29_list_deceased import listDeceased
 from US31.US31_list_living_single import listLivingSinglesOver30
@@ -30,8 +30,11 @@ def main(file_name):
     df_fam = DataFrame(list_fam)
     print("DF indi\n ", df_indi, "\n")
     print("DF fam \n ", df_fam, "\n")
+    
+    dates_before_current_date(df_indi,df_fam) # US01
+    less_than_150_years(df_indi) # US07
     # run sa3.ged
-    listOrphans(df_indi, df_fam)
+    listOrphans(df_indi, df_fam) # US33
 
     # run Sachin_Devangan_CS_555_WS4.ged
     listLivingSinglesOver30(df_indi)
