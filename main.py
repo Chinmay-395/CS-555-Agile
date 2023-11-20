@@ -104,4 +104,4 @@ def main(file_name):
 
 
 
-main("sa4.ged")
+main("test_ged_file.ged")
