@@ -2,7 +2,7 @@
 
 from datetime import date, datetime
 import pandas as pd
-from printOutput import printingAllTheStuff
+# from printOutput import printingAllTheStuff
 def is_within_last_30_days(event_date):
     return (date.today() - datetime.strptime(event_date," %d %b %Y").date()).days <= 30 if pd.notna(event_date) else False
     

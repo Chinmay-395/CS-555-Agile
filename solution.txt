@@ -1,0 +1,57 @@
+chinmay  …/CS-555-Agile   sprint3_finale !?  20:48  python3 main.py 
+DF indi
+       ID                   NAME GENDER      BIRTHDAY CHILD  ALIVE  AGE    SPOUSE        DEATH
+0    I1      Sachin /Devangan/      M    1 JAN 1990    F1   True   33       NaN          NaN
+1    I2   Radheshyam /Jaiswal/      M   14 MAY 1979   NaN   True   44      [F1]          NaN
+2    I3     Ranjana /Devangan/      F    2 FEB 1979    F2   True   44      [F1]          NaN
+3    I4    Radhelal /Devangan/      M    4 JUL 1960   NaN   True   63      [F2]          NaN
+4    I5       Meena /Devangan/      F    6 JUN 1965   NaN   True   58      [F2]          NaN
+5    I6    Abhishek /Devangan/      M   16 MAR 1985    F2   True   38      [F3]          NaN
+6    I7   Meenakshi /Devangan/      F   13 MAR 1985   NaN   True   38      [F3]          NaN
+7    I8     Bhaskar /Devangan/      M   18 OCT 1981    F2   True   42      [F4]          NaN
+8    I9       Laxmi /Devangan/      F   30 OCT 1982   NaN   True   41      [F4]          NaN
+9   I10    Geetmala /Devangan/      F   13 DEC 1983    F2   True   39      [F5]          NaN
+10  I11         Ram /Devangan/      M    7 JUN 1978   NaN   True   45      [F5]          NaN
+11  I12        Ayan /Devangan/      M   14 NOV 2018    F3   True    4       NaN          NaN
+12  I13        Veer /Devangan/      M    1 OCT 2023    F3   True    0       NaN          NaN
+13  I14    Harshita /Devangan/      F   17 OCT 2006    F5   True   17       NaN          NaN
+14  I15       Manas /Devangan/      M    5 JUN 2011    F5   True   12       NaN          NaN
+15  I16       Peehu /Devangan/      F    3 APR 2019    F4   True    4       NaN          NaN
+16  I17       Rahul /Devangan/      M    4 APR 1990    F2   True   33  [F6, F7]          NaN
+17  I18     Deepika /Padukone/      F    3 SEP 1991   NaN   True   32      [F6]          NaN
+18  I19           Alia /Bhatt/      F    5 MAR 1990   NaN  False    0      [F7]   5 MAR 1990
+19  I20      Ranbir /Devangan/      M    2 APR 2019    F7   True    4       NaN          NaN
+20  I21       Varun /Devangan/      M    6 AUG 2022    F6   True    1       NaN          NaN 
+
+DF fam 
+     ID HUSBAND ID           HUSBAND NAME WIFE ID              WIFE NAME                CHILDREN       MARRIED  DIVORCE STATUS
+0  F1         I2   Radheshyam /Jaiswal/      I3     Ranjana /Devangan/                    [I1]    7 MAY 1995           False
+1  F2         I4    Radhelal /Devangan/      I5       Meena /Devangan/  [I3, I6, I8, I10, I17]    8 MAR 1978           False
+2  F3         I6    Abhishek /Devangan/      I7   Meenakshi /Devangan/              [I12, I13]   16 DEC 2015           False
+3  F4         I8     Bhaskar /Devangan/      I9       Laxmi /Devangan/                   [I16]    5 APR 2010           False
+4  F5        I11         Ram /Devangan/     I10    Geetmala /Devangan/              [I14, I15]   11 OCT 2004           False
+5  F6        I17       Rahul /Devangan/     I18     Deepika /Padukone/                   [I21]    8 AUG 2020           False
+6  F7        I17       Rahul /Devangan/     I19           Alia /Bhatt/                   [I20]    7 MAR 2016           False 
+
+US07: No Errors found
+US33: No orphans in this family tree
+Living singles over 30: [('I1', 33, ' Sachin /Devangan/')]
+US35: No recent births found in the last 30 days.
+US38: List of Upcoming Birthdays [('I12', ' 14 NOV 2018', ' Ayan /Devangan/')]
+US10: Valid Marriages: Couples married after both spouses turned 14 years old:
+Husband ID: I2, Husband Name:  Radheshyam /Jaiswal/, Wife ID: I3, Wife Name:  Ranjana /Devangan/
+Husband ID: I6, Husband Name:  Abhishek /Devangan/, Wife ID: I7, Wife Name:  Meenakshi /Devangan/
+Husband ID: I8, Husband Name:  Bhaskar /Devangan/, Wife ID: I9, Wife Name:  Laxmi /Devangan/
+Husband ID: I11, Husband Name:  Ram /Devangan/, Wife ID: I10, Wife Name:  Geetmala /Devangan/
+Husband ID: I17, Husband Name:  Rahul /Devangan/, Wife ID: I18, Wife Name:  Deepika /Padukone/
+Husband ID: I17, Husband Name:  Rahul /Devangan/, Wife ID: I19, Wife Name:  Alia /Bhatt/
+US02: No birth before marriage errors found.
+US28: Order of siblings by decreasing age
+[{'family_id': 'F1', 'siblings': [' Sachin /Devangan/']}, {'family_id': 'F2', 'siblings': [' Rahul /Devangan/', ' Ranjana /Devangan/', ' Bhaskar /Devangan/', ' Abhishek /Devangan/', ' Geetmala /Devangan/']}, {'family_id': 'F3', 'siblings': [' Ayan /Devangan/', ' Veer /Devangan/']}, {'family_id': 'F4', 'siblings': [' Peehu /Devangan/']}, {'family_id': 'F5', 'siblings': [' Manas /Devangan/', ' Harshita /Devangan/']}, {'family_id': 'F6', 'siblings': [' Varun /Devangan/']}, {'family_id': 'F7', 'siblings': [' Ranbir /Devangan/']}]
+US29: List of Deceased People: [('I19', ' Alia /Bhatt/')]
+US37: No recent survivors found 
+US03: Birth before death 
+ ['ERROR: INDIVIDUAL: US03: -1: I19: Died 1990-03-05 before born 1990-03-05']
+US05: 
+ ERROR: FAMILY: Husband ID I17 Wife ID I19 married after death
+US39: List Upcoming Anniversaries:  US39: There are no upcoming anniversaries.

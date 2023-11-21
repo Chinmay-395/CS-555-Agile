@@ -8,7 +8,7 @@ sys.path.insert(0,"/home/chinmay/Coding/Courses/CS555_WS4_Agile/Group_4_Assignme
 from Initialparser import parse
 
 
-class TestUS33_list_orphans(unittest.TestCase):
+class TestUS31(unittest.TestCase):
     
     @patch('builtins.print')
     def test_input_data(self,mock_print):
