@@ -5,7 +5,9 @@ def list_living_married(indi_df, fam_df):
         if type(row['SPOUSE']) is list:
             for family in row['SPOUSE']:
                 family_row = fam_df.loc[fam_df['ID'] == family]
+                print("HHH\n",family_row)
                 family_divorced = family_row.at[family_row.index[0], 'DIVORCE STATUS']
+                print("HHHHHH \n",family_divorced)
                 if not family_divorced:
                     married_people.append((row['ID'], row['AGE']))
                     break
