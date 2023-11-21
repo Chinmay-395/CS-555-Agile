@@ -1,0 +1,47 @@
+﻿0 HEAD
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE My Family
+1 DATE 2 OCT 2023
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I1@
+2 NAME Chinmay
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Ronnak /Das/
+2 GIVN Ronnak
+2 SURN Das
+2 _MARNM Das
+1 SEX M
+1 BIRT
+2 DATE 4 APR 1930
+1 FAMS @F1@
+0 @I2@ INDI
+1 NAME Anuradha /Hardikar/
+2 GIVN Anuradha
+2 SURN Hardikar
+2 _MARNM Das
+1 SEX F
+1 BIRT
+2 DATE 3 APR 1930
+1 FAMS @F1@
+0 @I3@ INDI
+1 NAME Mehul /Das/
+2 GIVN Mehul
+2 SURN Das
+2 _MARNM Das
+1 SEX M
+1 BIRT
+2 DATE 3 FEB 2013
+1 FAMC @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 _CURRENT Y
+1 _PRIMARY Y
+0 TRLR
