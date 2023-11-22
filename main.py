@@ -14,6 +14,7 @@ from US12.US12_parents_not_too_old import parents_not_too_old
 from US13.US_13 import check_sibling_birth_dates
 
 # from US_16. #commented out because it is not completed
+from US18.noMarriageToDescendants import noMarriageToDescendants
 from US22.US22_unique_ids import check_unique_ids
 from US23.US23_list_unique_name_and_birthday import listUniqueNameAndBirthdays
 from US27.US27_include_age import include_individual_ages
@@ -68,6 +69,10 @@ def main(file_name):
 
     print("US13: Siblings spacing")  # US13
     print("", check_sibling_birth_dates(df_indi, df_fam))
+
+    print("US18: No marriage to descendants")
+    us18_result = noMarriageToDescendants(df_indi, df_fam)
+    print(us18_result)
 
     check_unique_ids(df_indi, df_fam)  # US22
 
